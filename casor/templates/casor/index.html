@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stylecss.css'%}">
+    <title></title>
+</head>
+<body>
+    {% block content %}
+<div class="container">
+    <div class="row">
+        <div class=" col-md-12">
+            {% include 'casor/slider.html' with slider=sliderdata %}
+            
+        </div>
+    </div><!--End of Row-->
+<hr style="color: blue;">
+<hr style="color: blue;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>CASORFCEP</h3>
+                <h4>Vission</h4>
+                <p><em>Welead students to serving the lord in days<br> of their youth.</em></p>
+
+            </div>
+            <div class="col-md-4"><h1>
+                <h3>CASORFCEP</h3>
+                <h4>Motto</h4>
+                <p><em>2Cor 5:19-20</em></p>
+                <p><em><strong>“…reconciling our generation to God.”</strong></em></p>
+            </h1></div>
+            <div class="col-md-4">
+                <h3>CASORFCEP</h3>
+                <h4>Sloggan</h4>
+                <p><em><strong>AMBASSADORS ON CAMPUS</strong></em></p>
+            </div>
+        </div>
+        
+    </div>
+
+
+    
+    {% endblock content %}
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for event in events  %}
+                    <div class="card mt-4">
+                        <div class="card-img-top">
+                        <p><img width="100%" height="400px" src="{{event.image.url}}"></p>
+                        </div>
+                        <div class="card-title">
+                        <p><h3>{{event.event_title}}</h3></p>
+                        </div>
+                        <div class="card-subtitle">
+                            <h4><span class="text-bg-danger">Powered By:</span>{{event.event_host}}</h4>
+                            <h4><span class="text-bg-danger">Date:</span>{{event.event_date}}</h4>
+                            <h4><span class="text-bg-danger">Venu:</span>{{event.event_location}}</h4>
+
+                        </div>
+                        <div class="card-body">
+                            <p>{{event.description}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+</html>

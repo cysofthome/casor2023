@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <hr>
+    <hr>
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+    <div class="section-title">
+        <h2>Leadership</h2>
+        <h3>Meet Our Hardworking <span>leaders</span></h3>
+        <p>this are the team of our hardworking and courageous leaders.These leaders are leaders with capacity</p>
+          <hr>
+      </div>
+
+    <div class="container">
+        <div class="row">
+            {% for leadership in leaders %}
+            <div class="col-sm-3">
+                <br>
+              <div class="card">
+                <img src="{{leadership.photo.url}}" width="170px" height="250px" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h4 class="text-lg-center text-bg-info">{{leadership.name}}</h4>
+
+                  <h5 class="card-title text-bg-dark"><span>POST: {{leadership.position}}</span></h5>
+
+                    <h5 class="card-title text-bg-dark text-white"><span>START: {{leadership.year_start}}</span></h5>
+                    <h5 class="card-title text-bg-dark"><span>END: {{leadership.year_end}}</span></h5>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+    </div>
+        </div>
+    </section>
+
+    {% endblock content %}
+</body>
+</html>
